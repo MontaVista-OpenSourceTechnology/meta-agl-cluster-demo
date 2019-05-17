@@ -25,9 +25,3 @@ addtask do_populate_sdk after do_rootfs
 TOOLCHAIN_HOST_TASK_append = " nativesdk-wayland nativesdk-wayland-dev"
 
 TOOLCHAIN_HOST_TASK_append = " nativesdk-perl-modules "
-
-# Add libvcard to the SDK to support libqtappfw
-TOOLCHAIN_TARGET_TASK += " \
-    libvcard-dev \
-    libvcard-staticdev \
-    "
