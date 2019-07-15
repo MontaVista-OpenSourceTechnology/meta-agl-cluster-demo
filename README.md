@@ -80,6 +80,10 @@ contains only ``packagegroup-agl-cluster-demo-platform``.
 ``packagegroup-agl-profile-cluster-qt5``, and the packages required for the DEMO
 applications.
 
+* packagegroup-agl-cluster-demo-qtcompositor
+
+This is for generating the image 'agl-cluster-demo-qtcompositor'.
+
 Supported Machines
 ------------------
 
@@ -95,3 +99,6 @@ Supported Target of bitbake
 * `agl-cluster-demo-platform` is the full image of the AGL Instrument Cluster
 Demo Platform with all applications
 
+* `agl-cluster-demo-qtcompositor` is the image of the AGL Instrument Cluster
+Demo that uses qtwayland compositor, contains a simple cluster graphic user
+interface and some AGL services.
