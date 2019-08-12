@@ -22,5 +22,7 @@ RDEPENDS_${PN} += " \
 	gstreamer1.0-plugins-base \
 	gstreamer1.0-plugins-good \
 	gstreamer1.0-plugins-bad \
-	gstreamer1.0-vaapi \
 "
+
+# VA-API may be used on Intel if present
+RRECOMMENDS_${PN}_append_intel-corei7-64 = " gstreamer1.0-vaapi"
