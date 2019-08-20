@@ -13,18 +13,11 @@ ALLOW_EMPTY_${PN} = "1"
 
 RDEPENDS_${PN} += "\
     packagegroup-agl-profile-cluster-qt5 \
+    packagegroup-agl-ttf-fonts \
+    packagegroup-agl-source-han-sans-ttf-fonts \
+    packagegroup-agl-networking \
     "
 
-# fonts
-TTF_FONTS = " \
-    ttf-bitstream-vera \
-    ttf-dejavu-sans \
-    ttf-dejavu-sans-mono \
-    ttf-dejavu-serif \
-    source-han-sans-cn-fonts \
-    source-han-sans-jp-fonts \
-    source-han-sans-tw-fonts \
-    "
 
 AGL_APPS = " \
     cluster-dashboard \
@@ -41,13 +34,6 @@ RDEPENDS_${PN}_append = " \
     hmi-debug \
     libva-utils \
     linux-firmware-ralink \
-    connman \
-    connman-client \
-    connman-tools \
-    cluster-connman-conf \
-    iproute2 \
-    dhcp-client \
-    ${TTF_FONTS} \
     ${AGL_APPS} \
     ${AGL_APIS} \
 "

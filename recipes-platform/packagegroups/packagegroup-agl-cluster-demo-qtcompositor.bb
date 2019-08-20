@@ -13,6 +13,8 @@ ALLOW_EMPTY_${PN} = "1"
 
 RDEPENDS_${PN} += "\
     packagegroup-agl-profile-cluster-qtcompositor \
+    packagegroup-agl-ttf-fonts \
+    packagegroup-agl-networking \
     "
 
 AGL_SERVICE = " \
@@ -30,13 +32,6 @@ AGL_SERVICE = " \
 SMARTDEVICELINK = "${@bb.utils.contains('DISTRO_FEATURES', 'agl-sdl', \
     'sdl-core', '', d)}"
 
-# fonts
-TTF_FONTS = " \
-    ttf-bitstream-vera \
-    ttf-dejavu-sans \
-    ttf-dejavu-sans-mono \
-    ttf-dejavu-serif \
-    "
 
 AGL_APPS = " \
     cluster-gauges-qtcompositor \
@@ -45,15 +40,8 @@ AGL_APPS = " \
 RDEPENDS_${PN}_append = " \
     libva-utils \
     linux-firmware-ralink \
-    connman \
-    connman-client \
-    connman-tools \
-    cluster-connman-conf \
-    iproute2 \
-    dhcp-client \
     can-utils \
     most \
-    ${TTF_FONTS} \
     ${AGL_SERVICE} \
     ${AGL_APPS} \
     ${SMARTDEVICELINK} \
