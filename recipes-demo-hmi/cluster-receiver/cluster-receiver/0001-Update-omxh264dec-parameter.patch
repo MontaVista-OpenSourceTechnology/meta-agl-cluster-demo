@@ -1,0 +1,33 @@
+From 3647b15c75a7e0d4d68d6f5c9963b811c60d2bc8 Mon Sep 17 00:00:00 2001
+From: Harunobu Kurokawa <harunobu.kurokawa.dn@renesas.com>
+Date: Fri, 13 Dec 2019 07:58:54 +0900
+Subject: [PATCH] Update omxh264dec parameter
+
+Signed-off-by: Harunobu Kurokawa <harunobu.kurokawa.dn@renesas.com>
+---
+ app/main.cpp | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/app/main.cpp b/app/main.cpp
+index 0494b5f..8aab4c6 100644
+--- a/app/main.cpp
++++ b/app/main.cpp
+@@ -53,13 +53,13 @@ int main(int argc, char *argv[])
+ 	//
+ 
+ 	std::string pipeline_str = \
+-		"rtpbin name=rtpbin udpsrc caps=\"application/x-rtp,media=(string)video,clock-rate=(int)90000,encoding-name=JPEG,payload=26\" port=5005 !    rtpbin.recv_rtp_sink_0 rtpbin. ! rtpjpegdepay ! jpegdec ! ";
++		"udpsrc caps=\"application/x-rtp,media=(string)video,clock-rate=(int)90000,encoding-name=H264,payload=96\" port=5005 ! rtph264depay ! video/x-h264, stream-format=byte-stream,alignment=au ! h264parse ! omxh264dec ! ";
+ 	GstPlugin *plugin = gst_registry_find_plugin(gst_registry_get (), "vaapisink");
+ 	if(plugin) {
+ 		pipeline_str += "vaapisink";
+ 		gst_object_unref(plugin);
+ 	} else {
+-		pipeline_str += "waylandsink";
++		pipeline_str += " waylandsink";
+ 	}
+ #ifdef DEBUG
+ 	std::cout << "Using pipeline: " << pipeline_str << std::endl;
+-- 
+2.7.4
+
