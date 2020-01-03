@@ -14,7 +14,7 @@ PV = "1.0+git${SRCPV}"
 S  = "${WORKDIR}/git"
 
 # build-time dependencies
-DEPENDS += "qtquickcontrols2 qtwebsockets qlibwindowmanager"
+DEPENDS += "qtquickcontrols2 qtwebsockets qlibwindowmanager libqtappfw glib-2.0"
 
 inherit pkgconfig cmake_qt5 aglwgt
 
@@ -24,6 +24,6 @@ RDEPENDS_${PN} += " \
 	qtquickcontrols-qmlplugins \
 	qtquickcontrols2 \
 	qtquickcontrols2-qmlplugins \
-	qtwebsockets \
-	qtwebsockets-qmlplugins \
+	libqtappfw \
+	agl-service-signal-composer \
 "
