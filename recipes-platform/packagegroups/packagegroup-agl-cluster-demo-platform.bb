@@ -38,7 +38,6 @@ RDEPENDS_${PN}_append = " \
     cluster-windowmanager-conf \
     hmi-debug \
     can-utils \
-    libva-utils \
     linux-firmware-ralink \
     ${AGL_APPS} \
     ${AGL_APIS} \
