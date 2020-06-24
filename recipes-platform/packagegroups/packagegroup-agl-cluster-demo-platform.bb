@@ -25,7 +25,6 @@ AGL_APPS = " \
     "
 
 AGL_APIS = " \
-    agl-service-windowmanager \
     agl-service-can-low-level \
     agl-service-gps \
     agl-service-signal-composer \
@@ -35,7 +34,6 @@ DEMO_PRELOAD = "${@bb.utils.contains("DISTRO_FEATURES", "agl-cluster-demo-preloa
 
 RDEPENDS_${PN}_append = " \
     wayland-ivi-extension \
-    cluster-windowmanager-conf \
     hmi-debug \
     can-utils \
     linux-firmware-ralink \
