@@ -14,9 +14,12 @@ PV = "1.0+git${SRCPV}"
 S  = "${WORKDIR}/git"
 
 # build-time dependencies
-DEPENDS = "wayland wayland-ivi-extension libwindowmanager gstreamer1.0"
+DEPENDS += "wayland wayland-native \
+	    qtwayland qtwayland-native \
+	    qtquickcontrols2 qtwebsockets qtbase qtdeclarative \
+	    gstreamer1.0 gstreamer1.0-plugins-base gstreamer1.0-plugins-bad"
 
-inherit cmake aglwgt
+inherit cmake_qt5 pkgconfig aglwgt
 
 RDEPENDS_${PN} += " \
 	gstreamer1.0-plugins-base \
