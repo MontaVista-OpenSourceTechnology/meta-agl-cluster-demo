@@ -29,10 +29,6 @@ AGL_SERVICE = " \
     agl-service-identity-agent \
     "
 
-SMARTDEVICELINK = "${@bb.utils.contains('DISTRO_FEATURES', 'agl-sdl', \
-    'sdl-core', '', d)}"
-
-
 AGL_APPS = " \
     cluster-gauges-qtcompositor \
     "
@@ -44,5 +40,4 @@ RDEPENDS_${PN}_append = " \
     most \
     ${AGL_SERVICE} \
     ${AGL_APPS} \
-    ${SMARTDEVICELINK} \
 "
