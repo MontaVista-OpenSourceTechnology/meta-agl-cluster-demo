@@ -33,7 +33,6 @@ AGL_APIS = " \
 DEMO_PRELOAD = "${@bb.utils.contains("DISTRO_FEATURES", "agl-cluster-demo-preload", "cluster-dashboard-demo-config", "",d)}"
 
 RDEPENDS_${PN}_append = " \
-    wayland-ivi-extension \
     hmi-debug \
     can-utils \
     linux-firmware-ralink \
