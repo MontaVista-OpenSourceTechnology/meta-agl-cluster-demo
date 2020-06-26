@@ -28,6 +28,7 @@ AGL_APIS = " \
     agl-service-can-low-level \
     agl-service-gps \
     agl-service-signal-composer \
+    agl-compositor \
     "
 
 DEMO_PRELOAD = "${@bb.utils.contains("DISTRO_FEATURES", "agl-cluster-demo-preload", "cluster-dashboard-demo-config", "",d)}"
