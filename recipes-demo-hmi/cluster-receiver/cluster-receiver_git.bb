@@ -4,8 +4,7 @@ HOMEPAGE    = "https://gerrit.automotivelinux.org/gerrit/#/admin/projects/apps/a
 SECTION     = "apps"
 
 LICENSE     = "Apache-2.0 & MIT"
-LIC_FILES_CHKSUM = "file://LICENSE;md5=ae6497158920d9524cf208c09cc4c984 \
-                    file://app/surface.hpp;beginline=5;endline=21;md5=5351c531a191f0e3463aafcd0a6a00a3"
+LIC_FILES_CHKSUM = "file://COPYING;md5=374fee6a7817f1e1a5a7bfb7b7989553"
 
 SRC_URI = "gitsm://gerrit.automotivelinux.org/gerrit/apps/agl-cluster-demo-receiver;protocol=https;branch=${AGL_BRANCH}"
 SRCREV  = "${AGL_APP_REVISION}"
@@ -15,11 +14,9 @@ S  = "${WORKDIR}/git"
 
 # build-time dependencies
 DEPENDS += "wayland wayland-native \
-	    qtwayland qtwayland-native \
-	    qtquickcontrols2 qtwebsockets qtbase qtdeclarative \
 	    gstreamer1.0 gstreamer1.0-plugins-base gstreamer1.0-plugins-bad"
 
-inherit cmake_qt5 pkgconfig aglwgt
+inherit cmake pkgconfig aglwgt
 
 RDEPENDS_${PN} += " \
 	gstreamer1.0-plugins-base \

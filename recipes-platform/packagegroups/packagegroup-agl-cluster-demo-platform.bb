@@ -22,6 +22,7 @@ RDEPENDS_${PN} += "\
 AGL_APPS = " \
     cluster-dashboard \
     cluster-receiver \
+    qt-cluster-receiver \
     "
 
 AGL_APIS = " \
